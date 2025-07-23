@@ -6,9 +6,9 @@ import ButtonComponent from "../components/ButtonComponent";
 const WelcomeScreen = ({ navigation }) => {
   // Add welcome screen code here.
   return <View style={styles.container}>
-    <Image 
+    <Image
       source={require('../assets/little-lemon-logo.png')}
-      style={styles.logo} 
+      style={styles.logo}
     />
     <Text style={styles.catchPhrase}>Little Lemon, your local Mediterranean  Bistro</Text>
 

@@ -10,7 +10,6 @@ const SubscribeScreen = () => {
   const isEmailValid = validateEmail(email);
 
   return (
-  // <KeyboardAvoidingView>
     <View style={styles.container}>
         <Image
           source={require('../assets/little-lemon-logo-grey.png')}
@@ -32,8 +31,6 @@ const SubscribeScreen = () => {
         </ButtonComponent>
       </View>
       )
-    {/* </KeyboardAvoidingView> */}
-    
 };
 
 export default SubscribeScreen;
@@ -41,7 +38,6 @@ export default SubscribeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "red",
     alignItems: 'center',
     // justifyContent: 'center',
   },
