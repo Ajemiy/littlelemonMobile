@@ -30,6 +30,7 @@ const Item = ({ title, price }) => (
   </View>
 );
 
+
 export default function App() {
   const [data, setData] = useState([]);
   const [searchBarText, setSearchBarText] = useState('');
@@ -44,7 +45,7 @@ export default function App() {
     // Fetch the menu from the API_URL endpoint. You can visit the API_URL in your browser to inspect the data returned
     // The category field comes as an object with a property called "title". You just need to get the title value and set it under the key "category".
     // So the server response should be slighly transformed in this function (hint: map function) to flatten out each menu item in the array,
-    return [];
+   return [];
   }
 
   useEffect(() => {
@@ -109,37 +110,39 @@ export default function App() {
     setFilterSelections(arrayCopy);
   };
 
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Searchbar
-        placeholder="Search"
-        placeholderTextColor="white"
-        onChangeText={handleSearchChange}
-        value={searchBarText}
-        style={styles.searchBar}
-        iconColor="white"
-        inputStyle={{ color: 'white' }}
-        elevation={0}
-      />
-      <Filters
-        selections={filterSelections}
-        onChange={handleFiltersChange}
-        sections={sections}
-      />
-      <SectionList
-        style={styles.sectionList}
-        sections={data}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Item title={item.title} price={item.price} />
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.header}>{title}</Text>
-        )}
-      />
-    </SafeAreaView>
+      <SafeAreaView style={styles.container}>
+        <Searchbar
+          placeholder="Search"
+          placeholderTextColor="white"
+          onChangeText={handleSearchChange}
+          value={searchBarText}
+          style={styles.searchBar}
+          iconColor="white"
+          inputStyle={{ color: 'white' }}
+          elevation={0}
+        />
+        <Filters
+          selections={filterSelections}
+          onChange={handleFiltersChange}
+          sections={sections}
+        />
+        <SectionList
+          style={styles.sectionList}
+          sections={data}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <Item title={item.title} price={item.price} />
+          )}
+          renderSectionHeader={({ section: { title } }) => (
+            <Text style={styles.header}>{title}</Text>
+          )}
+        />
+      </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -173,3 +176,4 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
+
